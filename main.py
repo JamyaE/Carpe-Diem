@@ -64,13 +64,3 @@ print("Module Finished")
 # sorting code
 
 # 4 3 2 7 1
-
-list = [4, 3, 2, 7, 1 ]
-
-x1 = 4
-x2 = 3
-x3 = 2
-x4=  7
-x5 = 1
-
-sortedlist = sort (x1, x2, x3 ,x4, x5)
