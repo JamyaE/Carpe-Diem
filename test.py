@@ -26,10 +26,13 @@ list_of_numbers = {'10': [[50, 400, 20, 80],
 #CHALLANGE make your own Dictonary and print the values out. Try chaning the keys
 # and try changing or expanding the values
 
+#CHALLANGE try adding adding a value to a dictonary that isnt a dictonary or a list
+
 # printing  lists of data and keys in a few ways
 # using items() method
 print("accessing  lists of data and keys in a few ways")
 print("accessing a dictionary with a number as the key")
+# CHALLANGE .items() is a method for dictonaries, look up and try to use a different method.
 for key, values in num_as_key.items():
     #CHALLANGE make a condition to set 1 of the Dictonaries to a new variable
     for i in values:
