@@ -1,4 +1,4 @@
-# some examp;e python code linking what we learned in class to some new code
+ # some examp;e python code linking what we learned in class to some new code
 # 0be used as a  learning example
 # By Donato Kava
 import subprocess

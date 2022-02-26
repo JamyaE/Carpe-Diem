@@ -1,1 +1,1 @@
-#comment hello
+print("HELLO WORLD")
