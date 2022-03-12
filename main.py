@@ -48,17 +48,19 @@ for x in range(0, 13, 2):
     # Display the directory to show the change
     list_files = subprocess.run(
         ["powershell", "-command", "ls", "./file_folder"])
-    #conditional example
+    # conditional example
+    # expand for another conditional and regualr file access
     if(x == 2):
         print("I only print the last time")
         list_files = subprocess.run(
-                ["powershell", "-command", "mv", "./file_folder/file_" + str(x) + ".txt", "./"])
-        x = 3
+            ["powershell", "-command", "mv", "./file_folder/file_" + str(x) + ".txt", "./"])
         print("for loop", x)
+    if(x == 4):
+        list_files = subprocess.run(
+            ["powershell", "-command", "New-Item", "./file_folder/flow.txt"])
     print(x)
 
 print("Module Finished")
-
 
 
 # sorting code

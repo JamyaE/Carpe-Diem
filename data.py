@@ -117,3 +117,22 @@ output = function_time(num_a, num_b)
 print("two integers passed to the function", output)
 output = function_time(A_list, B_list)
 print("two lists passed to the function", output)
+
+# here is a function that would be fun to expand
+# it takes in 1st order or linear polynomials coefficient and constant, then
+# returns the reuslt of a squaring operation e.g. (2x+1)^2 would feed in a
+# 2 and a 1 while the result would be 4x^2 + 4x + 1
+# CHALLANGE make this function to work on (3X^2 + 2X + 1)^2
+# CHALLANGE address a negative constant or x_coeff
+
+
+def square_poly(x_coeff, const):
+  second_power = x_coeff * x_coeff
+  first_power = x_coeff * const
+  # We need to run the same operations using the constants
+  first_power = first_power + (const*x_coeff)
+  squar_const = const * const
+  print(second_power, "X^2 +", first_power, "X +", const)
+
+# CHALLANGE try different values
+test = square_poly(2, 1)
