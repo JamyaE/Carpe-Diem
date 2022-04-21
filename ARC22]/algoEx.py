@@ -2,7 +2,7 @@ import math
 import numpy as np
 
 waypoint = []
-
+order = [0, 1, 2, 3, 4]
 #if __name__ == '__main__':
 #s	main("waypoint_1.txt")
 
@@ -14,17 +14,17 @@ def determinePath(waypoint):
     #42.63678 N -83.29613 E 10 C
     #42.29201 N -83.71624 E 10 B
     #42.29198 N -83.71561 E 10 A
-    print(waypoint['latitude'][0])
-    waypointH = np.array((42.27690, -83.73063, 10))
-    waypointA = np.array((42.33905, -83.73063, 10))
-    waypointC = np.array((42.63678, -83.29613, 10))
-    waypointB = np.array((42.29201, -83.71624, 10))
-    waypointA2 = np.array((42.29198, -83.71561, 10))
 
-    DistanceHtoA = np.linalg.norm(waypointH-waypointA)
-    DistanceHtoC = np.linalg.norm(waypointH-waypointC)
-    DistanceHtoB = np.linalg.norm(waypointH-waypointB)
-    DistanceHtoA2 = np.linalg.norm(waypointH-waypointA2)
+    0 == np.array((42.27690, -83.73063, 10))
+    1 == np.array((42.33905, -83.73063, 10))
+    2 == np.array((42.63678, -83.29613, 10))
+    3 == np.array((42.29201, -83.71624, 10))
+    4 == np.array((42.29198, -83.71561, 10))
+
+    DistanceHtoA = np.linalg.norm(0-1)
+    DistanceHtoC = np.linalg.norm(0-2)
+    DistanceHtoB = np.linalg.norm(0-3)
+    DistanceHtoA2 = np.linalg.norm(0-4)
     Distances = [DistanceHtoA, DistanceHtoB, DistanceHtoC, DistanceHtoA2]
     UminimumDistances = min(Distances)
     P1 = UminimumDistances, "DistanceHtoB"
@@ -42,9 +42,9 @@ def determinePath(waypoint):
     #print(np.sort(Arranged))
 
 ####################################
-    DistanceBtoC = np.linalg.norm(waypointB-waypointC)
-    DistanceBtoA = np.linalg.norm(waypointB-waypointA)
-    DistanceBtoA2 = np.linalg.norm(waypointB-waypointA2)
+    DistanceBtoC = np.linalg.norm(3-2)
+    DistanceBtoA = np.linalg.norm(3-1)
+    DistanceBtoA2 = np.linalg.norm(3-4)
     Distances2 = [DistanceBtoA, DistanceBtoC, DistanceBtoA2]
     SminimumDistances = min(Distances2)
     print("SminimunDistances", SminimumDistances)
@@ -60,8 +60,8 @@ def determinePath(waypoint):
 
 #####################################################
 
-    DistanceA2toA = np.linalg.norm(waypointA2-waypointA)
-    DistanceA2toC = np.linalg.norm(waypointA2-waypointC)
+    DistanceA2toA = np.linalg.norm(4-1)
+    DistanceA2toC = np.linalg.norm(4-2)
     Distances3 = [DistanceA2toA, DistanceA2toC]
     TminimumDistances = min(Distances3)
     print("TminimunDistances", TminimumDistances)
@@ -70,7 +70,7 @@ def determinePath(waypoint):
     print("DistanceA2toC", DistanceA2toC)
 
 ##################################################
-    DistanceAtoC = np.linalg.norm(waypointA-waypointC)
+    DistanceAtoC = np.linalg.norm(1-2)
     Distances4 = [DistanceAtoC]
     FminimumDistances = Distances4
     P4 = FminimumDistances, "DistanceAtoC"
