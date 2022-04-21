@@ -1,6 +1,7 @@
 import os
 import sys
 
+
 def readWaypointFile(filename):
 
 	# Returns dictionary of waypoint information
@@ -17,12 +18,12 @@ def readWaypointFile(filename):
 
     # Waypoint iteration
     for i in range(int(len(waypointFileArray)/6.0)):
-        latitude.append(waypointFileArray[(i-1)*6])
-        longitude.append(waypointFileArray[(i-1)*6+2])
-        latitudeDirection.append(str(waypointFileArray[(i-1)*6+1]))
-        longitudeDirection.append(str(waypointFileArray[(i-1)*6+3]))
-        altitude.append(waypointFileArray[(i-1)*6+4])
-        waypointType.append(str(waypointFileArray[(i-1)*6+5]))
+        latitude.append(waypointFileArray[(i)*6])
+        longitude.append(waypointFileArray[(i)*6+2])
+        latitudeDirection.append(str(waypointFileArray[(i)*6+1]))
+        longitudeDirection.append(str(waypointFileArray[(i)*6+3]))
+        altitude.append(waypointFileArray[(i)*6+4])
+        waypointType.append(str(waypointFileArray[(i)*6+5]))
 
     waypointDict['latitude'] = latitude
     waypointDict['longitude'] = longitude
@@ -32,4 +33,3 @@ def readWaypointFile(filename):
     waypointDict['waypointType'] = waypointType
 
     return waypointDict
-
