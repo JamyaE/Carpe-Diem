@@ -1,5 +1,5 @@
 import math
-from algo import *
+from algoT import *
 from in_out import *
 
 
@@ -26,4 +26,4 @@ def main(filename):
 #make home 1 second closets 2
 #donato
 if __name__ == '__main__':
-	main("waypoint_1.txt")
+	main("waypoint_1.txtS")
