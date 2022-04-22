@@ -27,23 +27,23 @@ def determinePath(waypoint):
     Lat0 = float(waypoint['latitude'][0-Hindex])
     Log0 = float(waypoint['longitude'][0-Hindex])
     Alt0 = float(waypoint['altitude'][0-Hindex])
-
+    waypoint0 = 0-Hindex
     Lat1 = float(waypoint['latitude'][1-Hindex])
     Log1 = float(waypoint['longitude'][1-Hindex])
     Alt1 = float(waypoint['altitude'][1-Hindex])
-
+    waypoint1 = 1-Hindex
     Lat2 = float(waypoint['latitude'][2-Hindex])
     Log2 = float(waypoint['longitude'][2-Hindex])
     Alt2 = float(waypoint['altitude'][2-Hindex])
-
+    waypoint2 = 2-Hindex
     Lat3 = float(waypoint['latitude'][3-Hindex])
     Log3 = float(waypoint['longitude'][3-Hindex])
     Alt3 = float(waypoint['altitude'][3-Hindex])
-
+    waypoint3 = 3-Hindex
     Lat4 = float(waypoint['latitude'][4-Hindex])
     Log4 = float(waypoint['longitude'][4-Hindex])
     Alt4 = float(waypoint['altitude'][4-Hindex])
-
+    waypoint4 = 4-Hindex
     #waypointType = waypoint['waypointType']
     #for index in range(len(waypointType)):
     #print(waypointType[index])
@@ -64,8 +64,17 @@ def determinePath(waypoint):
     Distances = [DistanceHtoA, DistanceHtoB,
                  DistanceHtoC, DistanceHtoA2]
     minimumDistances1 = min(Distances)
+    if minimumDistances1 == 0:
+        order.append(waypointA)
+    if minimumDistances1 == 1:
+        order.append(waypointC)
+    if minimumDistances1 == 2:
+        order.append(waypointB)
+    if minimumDistances1 == 3:
+        order.append(waypointA2)
     P1 = minimumDistances1, "DistanceHtoB"
-    print(minimumDistances1, "minimumDistances1")
+    #print(minimumDistances1, "minimumDistances1")
+
     #print("DistanceHtoA ", DistanceHtoA)
     #print("DistanceHtoC", DistanceHtoC)
     #print("DistanceHtoA2", DistanceHtoA2)
@@ -84,11 +93,11 @@ def determinePath(waypoint):
     DistanceBtoA2 = np.linalg.norm(waypointB-waypointA2)
     Distances2 = [DistanceBtoA, DistanceBtoC, DistanceBtoA2]
     minimumDistances2 = min(Distances2)
-    print("minimunDistances2", minimumDistances2)
-    P2 = minimumDistances2, "DistanceBtoA2"
-    print("DistanceBtoC", DistanceBtoC)
-    print("DistanceBtoA", DistanceBtoA)
-    print("DistanceBtoA2", DistanceBtoA2)
+#    print("minimunDistances2", minimumDistances2)
+#    P2 = minimumDistances2, "DistanceBtoA2"
+#    print("DistanceBtoC", DistanceBtoC)
+#    print("DistanceBtoA", DistanceBtoA)
+    #print("DistanceBtoA2", DistanceBtoA2)
     #Arranged2 = np.array([[DistanceAtoC,
     # DistanceAtoB, DistanceAtoA2]])
 
@@ -100,20 +109,20 @@ def determinePath(waypoint):
     DistanceA2toC = np.linalg.norm(waypointA2-waypointC)
     Distances3 = [DistanceA2toA, DistanceA2toC]
     minimumDistances3 = min(Distances3)
-    print("minimunDistances3", minimumDistances3)
-    P3 = minimumDistances3, "DistanceA2toA"
-    print("DistanceA2toA", DistanceA2toA)
-    print("DistanceA2toC", DistanceA2toC)
+#    print("minimunDistances3", minimumDistances3)
+#    P3 = minimumDistances3, "DistanceA2toA"
+##    print("DistanceA2toA", DistanceA2toA)
+#    print("DistanceA2toC", DistanceA2toC)
 
     ##################################################
     DistanceAtoC = np.linalg.norm(waypointA-waypointC)
     Distances4 = [DistanceAtoC]
     minimumDistances4 = Distances4
-    P4 = minimumDistances4, "DistanceAtoC"
+#    P4 = minimumDistances4, "DistanceAtoC"
 
-    Path = ([P1, P2, P3, P4])
-    print(Path)
+#    Path = ([P1, P2, P3, P4])
+    #print(Path)
     #print("This is the waypoint order")
     #return Path
-    order = [0, 1, 2, 3, 4]
+    #order[i]=order[i]+Hindex
     return order
