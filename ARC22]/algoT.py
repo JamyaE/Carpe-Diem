@@ -28,22 +28,27 @@ def determinePath(waypoint):
     Log0 = float(waypoint['longitude'][0-Hindex])
     Alt0 = float(waypoint['altitude'][0-Hindex])
     waypoint0 = 0-Hindex
+    print(waypoint0, 'waypoint0')
     Lat1 = float(waypoint['latitude'][1-Hindex])
     Log1 = float(waypoint['longitude'][1-Hindex])
     Alt1 = float(waypoint['altitude'][1-Hindex])
     waypoint1 = 1-Hindex
+    print(waypoint1, 'waypoint1')
     Lat2 = float(waypoint['latitude'][2-Hindex])
     Log2 = float(waypoint['longitude'][2-Hindex])
     Alt2 = float(waypoint['altitude'][2-Hindex])
     waypoint2 = 2-Hindex
+    print(waypoint2, 'waypoint2')
     Lat3 = float(waypoint['latitude'][3-Hindex])
     Log3 = float(waypoint['longitude'][3-Hindex])
     Alt3 = float(waypoint['altitude'][3-Hindex])
     waypoint3 = 3-Hindex
+    print(waypoint3, 'waypoint3')
     Lat4 = float(waypoint['latitude'][4-Hindex])
     Log4 = float(waypoint['longitude'][4-Hindex])
     Alt4 = float(waypoint['altitude'][4-Hindex])
     waypoint4 = 4-Hindex
+    print(waypoint4, 'waypoint4')
     #waypointType = waypoint['waypointType']
     #for index in range(len(waypointType)):
     #print(waypointType[index])
@@ -65,13 +70,13 @@ def determinePath(waypoint):
                  DistanceHtoC, DistanceHtoA2]
     minimumDistances1 = min(Distances)
     if minimumDistances1 == 0:
-        order.append(waypointA)
+        order.append(waypoint1)
     if minimumDistances1 == 1:
-        order.append(waypointC)
+        order.append(waypoint3)
     if minimumDistances1 == 2:
-        order.append(waypointB)
-    if minimumDistances1 == 3:
-        order.append(waypointA2)
+        order.append(waypoint3)
+    if minimumDistances1 == 4:
+        order.append(waypoint4)
 
         print(order)
     P1 = minimumDistances1, "DistanceHtoB"
