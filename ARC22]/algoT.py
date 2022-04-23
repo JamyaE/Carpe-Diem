@@ -77,7 +77,7 @@ def determinePath(waypoint):
         order.append(waypoint3)
     if minimumDistances1 == 4:
         order.append(waypoint4)
-
+        print(minimumDistances1)
         print(order)
     P1 = minimumDistances1, "DistanceHtoB"
     #print(minimumDistances1, "minimumDistances1")
